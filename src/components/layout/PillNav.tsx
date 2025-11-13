@@ -237,7 +237,7 @@ const PillNav: React.FC<PillNavProps> = ({
     href.startsWith('//') ||
     href.startsWith('mailto:') ||
     href.startsWith('tel:') ||
-    href.startsWith('#');
+    href.startsWith('/Ram-Dattu-Kadiyala-Resume.pdf');
 
   const cssVars = {
     ['--base']: baseColor,
@@ -269,6 +269,8 @@ const PillNav: React.FC<PillNavProps> = ({
                   <a
                     role="menuitem"
                     href={item.href}
+                    target={isExternalLink(item.href) ? '_blank' : undefined}
+                    rel={isExternalLink(item.href) ? 'noopener noreferrer' : undefined}
                     className={`pill${activeHref === item.href ? ' is-active' : ''}`}
                     aria-label={item.ariaLabel || item.label}
                     onMouseEnter={() => handleEnter(i)}
@@ -312,6 +314,8 @@ const PillNav: React.FC<PillNavProps> = ({
             <li key={item.href}>
                 <a
                   href={item.href}
+                  target={isExternalLink(item.href) ? '_blank' : undefined}
+                  rel={isExternalLink(item.href) ? 'noopener noreferrer' : undefined}
                   className={`mobile-menu-link${activeHref === item.href ? ' is-active' : ''}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

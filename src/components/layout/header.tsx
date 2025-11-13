@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Resume', href: '/Ram-Dattu-Kadiyala-Resume.pdf' },
 ];
 
 export function Header() {

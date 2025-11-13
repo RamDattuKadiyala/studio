@@ -21,7 +21,7 @@ export function HeroSection() {
     <section id="hero" className="relative flex items-center justify-center min-h-screen text-center text-white overflow-hidden">
       {showAnimation ? (
          <div className="fixed inset-0 z-0">
-            <Prism animationType="rotate" timeScale={0.5} noise={0.0} />
+            <Prism animationType="hover" timeScale={0.5} noise={0.0} />
          </div>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0" />

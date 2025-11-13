@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import SplitText from '../ui/SplitText';
-import LightRays from '../ui/LightRays';
+import Prism from '../ui/Prism';
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -21,16 +21,7 @@ export function HeroSection() {
     <section id="hero" className="relative flex items-center justify-center min-h-screen text-center text-white overflow-hidden">
       {showAnimation ? (
          <div className="fixed inset-0 z-0">
-            <LightRays
-                raysColor="#C0C0C0"
-                raysSpeed={1.5}
-                lightSpread={0.8}
-                rayLength={1.2}
-                followMouse={true}
-                mouseInfluence={0.1}
-                noiseAmount={0.1}
-                distortion={0.05}
-            />
+            <Prism animationType="rotate" timeScale={0.5} />
          </div>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0" />

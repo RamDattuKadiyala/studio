@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import SplitText from '../ui/SplitText';
-import Aurora from '../ui/Aurora';
+import LightRays from '../ui/LightRays';
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -15,21 +15,25 @@ export function HeroSection() {
     setIsClient(true);
   }, []);
 
-  const showAurora = isClient && theme === 'dark';
+  const showAnimation = isClient && theme === 'dark';
 
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen text-center text-white overflow-hidden">
-      {showAurora ? (
+      {showAnimation ? (
          <div className="fixed inset-0 z-0">
-            <Aurora
-                colorStops={["#4169E1", "#87CEEB", "#C0C0C0"]}
-                blend={0.5}
-                amplitude={1.0}
-                speed={0.5}
+            <LightRays
+                raysColor="#C0C0C0"
+                raysSpeed={1.5}
+                lightSpread={0.8}
+                rayLength={1.2}
+                followMouse={true}
+                mouseInfluence={0.1}
+                noiseAmount={0.1}
+                distortion={0.05}
             />
          </div>
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0 dark:bg-transparent dark:bg-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0" />
       )}
       <div className="relative z-10 p-4">
         <SplitText

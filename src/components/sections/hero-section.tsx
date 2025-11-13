@@ -39,7 +39,7 @@ export function HeroSection() {
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
-          delay={210}
+          delay={150}
           duration={3}
           ease="power3.out"
         />

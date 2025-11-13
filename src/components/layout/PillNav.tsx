@@ -23,6 +23,7 @@ export interface PillNavProps {
   pillTextColor?: string;
   onMobileMenuClick?: () => void;
   initialLoadAnimation?: boolean;
+  children?: React.ReactNode;
 }
 
 const PillNav: React.FC<PillNavProps> = ({
@@ -36,7 +37,8 @@ const PillNav: React.FC<PillNavProps> = ({
   hoveredPillTextColor = '#060010',
   pillTextColor,
   onMobileMenuClick,
-  initialLoadAnimation = true
+  initialLoadAnimation = true,
+  children
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -290,7 +292,9 @@ const PillNav: React.FC<PillNavProps> = ({
             ))}
           </ul>
         </div>
-
+        <div className="ml-2">
+            {children}
+        </div>
         <button
           className="mobile-menu-button mobile-only"
           onClick={toggleMobileMenu}

@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import PillNav from './PillNav';
 import './PillNav.css';
+import { ThemeToggle } from '../theme-toggle';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -25,6 +26,8 @@ export function Header() {
       pillColor="white"
       hoveredPillTextColor="white"
       pillTextColor="#046307"
-    />
+    >
+        <ThemeToggle />
+    </PillNav>
   );
 }

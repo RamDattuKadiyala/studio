@@ -21,7 +21,7 @@ export function HeroSection() {
             <Link href="#contact">Hire Me</Link>
           </Button>
           <Button size="lg" asChild variant="outline" className="border-white text-white hover:bg-white hover:text-primary transition-colors">
-            <Link href="#experience">View My Work</Link>
+            <Link href="#skills">View My Work</Link>
           </Button>
         </div>
       </div>

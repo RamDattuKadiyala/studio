@@ -26,10 +26,17 @@ export function ContactSection() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    const recipientEmail = "ramdattu54@gmail.com";
+    const subject = `Message from ${values.name} via Portfolio`;
+    const body = `Name: ${values.name}\nFrom: ${values.email}\n\nMessage:\n${values.message}`;
+    
+    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoLink;
+
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "Redirecting to Email Client",
+      description: "Your message is ready to be sent.",
     });
     form.reset();
   }

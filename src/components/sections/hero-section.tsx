@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import Aurora from '../ui/Aurora';
 import SplitText from '../ui/SplitText';
+import Beams from '../ui/Beams';
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -15,17 +15,21 @@ export function HeroSection() {
     setIsClient(true);
   }, []);
 
-  const showAurora = isClient && theme === 'dark';
+  const showBeams = isClient && theme === 'dark';
 
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen text-center text-white overflow-hidden">
-      {showAurora ? (
+      {showBeams ? (
          <div className="fixed inset-0 z-0">
-            <Aurora
-                colorStops={["#4169E1", "#E6EBF5", "#C0C0C0"]}
-                blend={0.5}
-                amplitude={1.0}
-                speed={0.5}
+            <Beams
+                beamWidth={2}
+                beamHeight={15}
+                beamNumber={12}
+                lightColor="#4169E1"
+                speed={2}
+                noiseIntensity={1.75}
+                scale={0.2}
+                rotation={0}
             />
          </div>
       ) : (

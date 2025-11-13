@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import PixelCard from '@/components/ui/pixel-card';
 import { Badge } from '@/components/ui/badge';
+import { CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Lightbulb, Settings, DraftingCompass } from 'lucide-react';
 
 const skillsData = {
@@ -8,20 +9,23 @@ const skillsData = {
     skills: [
       "Social Media Marketing", "Ad Strategy & Campaign Planning", "A/B Testing & Personalized Ads", "Client Pain Point Analysis", "Meta Ads Management"
     ],
+    variant: 'default',
   },
   "Tools & Platforms": {
     icon: <Settings className="h-6 w-6 text-primary" />,
     skills: [
       "Meta Ads Manager", "Canva", "Google Ads (Basic)"
     ],
+    variant: 'blue',
   },
   "Technical & Creative": {
     icon: <DraftingCompass className="h-6 w-6 text-primary" />,
     skills: [
       "Copywriting", "Presentation Design", "Team Leadership & Communication"
     ],
+    variant: 'yellow',
   }
-};
+} as const;
 
 export function SkillsSection() {
   return (
@@ -33,19 +37,19 @@ export function SkillsSection() {
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {Object.entries(skillsData).map(([category, data]) => (
-            <Card key={category} className="flex flex-col hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="flex flex-row items-center gap-4">
-                {data.icon}
-                <CardTitle>{category}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex flex-wrap gap-2">
-                  {data.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary">{skill}</Badge>
-                  ))}
+            <PixelCard key={category} variant={data.variant} className="flex flex-col">
+                <div className='p-6'>
+                    <div className="flex flex-row items-center gap-4 mb-4">
+                        {data.icon}
+                        <h3 className="text-xl font-semibold text-foreground">{category}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                        {data.skills.map((skill) => (
+                        <Badge key={skill} variant="secondary">{skill}</Badge>
+                        ))}
+                    </div>
                 </div>
-              </CardContent>
-            </Card>
+            </PixelCard>
           ))}
         </div>
       </div>

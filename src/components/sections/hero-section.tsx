@@ -1,10 +1,35 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import Aurora from '../ui/Aurora';
 
 export function HeroSection() {
+  const { theme } = useTheme();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const showAurora = isClient && theme === 'dark';
+
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen text-center text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0 dark:bg-transparent dark:bg-none" />
+      {showAurora ? (
+         <div className="absolute inset-0 z-0">
+            <Aurora
+                colorStops={["#4169E1", "#E6EBF5", "#C0C0C0"]}
+                blend={0.5}
+                amplitude={1.0}
+                speed={0.5}
+            />
+         </div>
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0 dark:bg-transparent dark:bg-none" />
+      )}
       <div className="relative z-10 p-4">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl font-headline">
           Ram Dattu Kadiyala

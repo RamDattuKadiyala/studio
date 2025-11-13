@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent } from '@/components/ui/card';
+import { CardContent } from '@/components/ui/card';
+import PixelCard from '../ui/pixel-card';
 
 export function AboutSection() {
   const headshot = PlaceHolderImages.find(p => p.id === 'headshot');
@@ -8,7 +9,7 @@ export function AboutSection() {
   return (
     <section id="about" className="py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="overflow-hidden shadow-lg">
+        <PixelCard variant="default" className="overflow-hidden shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-3">
             <div className="md:col-span-1">
               {headshot && (
@@ -33,7 +34,7 @@ export function AboutSection() {
               </CardContent>
             </div>
           </div>
-        </Card>
+        </PixelCard>
       </div>
     </section>
   );

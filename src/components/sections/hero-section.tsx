@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import Aurora from '../ui/Aurora';
+import SplitText from '../ui/SplitText';
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -31,9 +32,17 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0 dark:bg-transparent dark:bg-none" />
       )}
       <div className="relative z-10 p-4">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl font-headline">
-          Ram Dattu Kadiyala
-        </h1>
+        <SplitText
+          text="Ram Dattu Kadiyala"
+          tag="h1"
+          className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl font-headline"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          delay={50}
+          duration={0.8}
+          ease="power3.out"
+        />
         <p className="mt-4 text-lg sm:text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto">
           Marketing & Sales Enthusiast | Aspiring Marketing Strategist
         </p>

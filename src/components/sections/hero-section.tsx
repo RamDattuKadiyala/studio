@@ -20,7 +20,7 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen text-center text-white overflow-hidden">
       {showAurora ? (
-         <div className="absolute inset-0 z-0">
+         <div className="fixed inset-0 z-0">
             <Aurora
                 colorStops={["#4169E1", "#E6EBF5", "#C0C0C0"]}
                 blend={0.5}

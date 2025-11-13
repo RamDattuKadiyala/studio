@@ -8,8 +8,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, MapPin } from "lucide-react";
+import PixelCard from "../ui/pixel-card";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -41,61 +42,65 @@ export function ContactSection() {
           <p className="mt-4 text-lg text-muted-foreground">I'm open to new opportunities and collaborations.</p>
         </div>
         <div className="mt-12 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          <Card className="lg:h-full">
-            <CardHeader>
-              <CardTitle>Contact Information</CardTitle>
-              <CardDescription>Find me here or send a message directly.</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg"><MapPin className="h-6 w-6 text-primary" /></div>
-                <p>Vijayawada, Andhra Pradesh</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg"><Mail className="h-6 w-6 text-primary" /></div>
-                <a href="mailto:ramdattu54@gmail.com" className="hover:text-primary transition-colors">ramdattu54@gmail.com</a>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg"><Linkedin className="h-6 w-6 text-primary" /></div>
-                <a href="https://www.linkedin.com/in/ram-dattu-kadiyala-807039301/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  Connect on LinkedIn
-                </a>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Send me a message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField control={form.control} name="name" render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <FormControl><Input placeholder="Your Name" {...field} /></FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )} />
-                  <FormField control={form.control} name="email" render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl><Input type="email" placeholder="Your Email" {...field} /></FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )} />
-                  <FormField control={form.control} name="message" render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl><Textarea placeholder="Your message..." {...field} rows={4} /></FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )} />
-                  <Button type="submit" className="w-full">Send Message</Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+          <PixelCard variant="default" className="lg:h-full">
+            <div>
+              <CardHeader>
+                <CardTitle>Contact Information</CardTitle>
+                <CardDescription>Find me here or send a message directly.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg"><MapPin className="h-6 w-6 text-primary" /></div>
+                  <p>Vijayawada, Andhra Pradesh</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg"><Mail className="h-6 w-6 text-primary" /></div>
+                  <a href="mailto:ramdattu54@gmail.com" className="hover:text-primary transition-colors">ramdattu54@gmail.com</a>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg"><Linkedin className="h-6 w-6 text-primary" /></div>
+                  <a href="https://www.linkedin.com/in/ram-dattu-kadiyala-807039301/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                    Connect on LinkedIn
+                  </a>
+                </div>
+              </CardContent>
+            </div>
+          </PixelCard>
+          <PixelCard variant="blue">
+            <div>
+              <CardHeader>
+                <CardTitle>Send me a message</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField control={form.control} name="name" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Name</FormLabel>
+                        <FormControl><Input placeholder="Your Name" {...field} /></FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
+                    <FormField control={form.control} name="email" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl><Input type="email" placeholder="Your Email" {...field} /></FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
+                    <FormField control={form.control} name="message" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl><Textarea placeholder="Your message..." {...field} rows={4} /></FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
+                    <Button type="submit" className="w-full">Send Message</Button>
+                  </form>
+                </Form>
+              </CardContent>
+            </div>
+          </PixelCard>
         </div>
       </div>
     </section>

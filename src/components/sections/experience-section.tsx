@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Briefcase } from "lucide-react";
+import PixelCard from "@/components/ui/pixel-card";
 
 export function ExperienceSection() {
   return (
@@ -10,26 +11,28 @@ export function ExperienceSection() {
           <p className="mt-4 text-lg text-muted-foreground">Where I've made an impact.</p>
         </div>
         <div className="mt-12 max-w-2xl mx-auto">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Briefcase className="h-6 w-6 text-primary" />
+          <PixelCard variant="default">
+            <div>
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <Briefcase className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <CardTitle>Freelance Marketing Support</CardTitle>
+                    <CardDescription>Student Project Business (Self-initiated)</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle>Freelance Marketing Support</CardTitle>
-                  <CardDescription>Student Project Business (Self-initiated)</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-                <li>Designed marketing posters and managed Meta Ad campaigns to attract clients.</li>
-                <li>Handled all client communication, from initial inquiry to project completion, ensuring satisfaction.</li>
-                <li>Successfully generated leads and increased project inquiries through optimized ad targeting and competitive pricing strategies.</li>
-              </ul>
-            </CardContent>
-          </Card>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+                  <li>Designed marketing posters and managed Meta Ad campaigns to attract clients.</li>
+                  <li>Handled all client communication, from initial inquiry to project completion, ensuring satisfaction.</li>
+                  <li>Successfully generated leads and increased project inquiries through optimized ad targeting and competitive pricing strategies.</li>
+                </ul>
+              </CardContent>
+            </div>
+          </PixelCard>
         </div>
       </div>
     </section>

@@ -289,7 +289,7 @@ export default function PixelCard({
   return (
     <div
       ref={containerRef}
-      className={`pixel-card ${className}`}
+      className={`pixel-card glass-card ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onFocus={finalNoFocus ? undefined : onFocus}

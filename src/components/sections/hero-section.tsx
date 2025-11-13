@@ -5,7 +5,6 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen text-center text-white overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-primary to-green-600 bg-[200%_auto] animate-gradient z-0" />
-      <div className="absolute inset-0 bg-black/30 z-0"/>
       <div className="relative z-10 p-4">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl font-headline">
           Ram Dattu Kadiyala

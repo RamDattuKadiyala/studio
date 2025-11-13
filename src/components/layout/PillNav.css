@@ -41,9 +41,13 @@
   display: flex;
   align-items: center;
   height: var(--nav-h);
-  background: var(--base, #000);
   border-radius: 9999px;
   margin-left: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .pill-logo {
@@ -209,13 +213,16 @@
   top: calc(var(--nav-h) + 0.5rem);
   left: 0;
   right: 0;
-  background: var(--base, #f0f0f0);
   border-radius: 27px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   z-index: 998;
   opacity: 0;
   transform-origin: top center;
   visibility: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu-list {

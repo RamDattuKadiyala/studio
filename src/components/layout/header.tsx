@@ -21,10 +21,10 @@ export function Header() {
       activeHref={pathname}
       className="custom-nav"
       ease="power2.easeOut"
-      baseColor="#4169E1"
-      pillColor="#E6EBF5"
-      hoveredPillTextColor="#4169E1"
-      pillTextColor="#4169E1"
+      baseColor="#046307"
+      pillColor="#c8a2c8"
+      hoveredPillTextColor="#046307"
+      pillTextColor="#046307"
     />
   );
 }

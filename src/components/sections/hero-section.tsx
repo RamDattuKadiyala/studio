@@ -39,8 +39,8 @@ export function HeroSection() {
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
-          delay={50}
-          duration={0.8}
+          delay={210}
+          duration={3}
           ease="power3.out"
         />
         <p className="mt-4 text-lg sm:text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto">

@@ -23,7 +23,7 @@ export function Header() {
       ease="power2.easeOut"
       baseColor="#046307"
       pillColor="white"
-      hoveredPillTextColor="#046307"
+      hoveredPillTextColor="white"
       pillTextColor="#046307"
     />
   );

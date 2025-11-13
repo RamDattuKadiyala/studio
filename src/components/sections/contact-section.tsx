@@ -57,7 +57,7 @@ export function ContactSection() {
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg"><Linkedin className="h-6 w-6 text-primary" /></div>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/ram-dattu-kadiyala-807039301/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   Connect on LinkedIn
                 </a>
               </div>

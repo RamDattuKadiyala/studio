@@ -22,7 +22,7 @@ export function Header() {
       className="custom-nav"
       ease="power2.easeOut"
       baseColor="#046307"
-      pillColor="#c8a2c8"
+      pillColor="white"
       hoveredPillTextColor="#046307"
       pillTextColor="#046307"
     />
